@@ -33,15 +33,42 @@
 .fact-card {
     border: 1px solid rgb(216, 216, 216);
     /* background: rgb(63, 68, 72); */
-    padding: 2rem;
+    padding: 1.5rem 1rem .5rem 1rem;
     /* color: white; */
     color: black;
     border-radius: 1rem;
 }
 
+.fact-card-contents {
+    padding: 0rem .75rem;
+}
+
 .fact-card .more-details {
     width: 100%;
     text-align: right;
+}
+
+.fact-card .upvote {
+    color: green;
+}   
+
+.fact-card .button-purpose {
+    color: black;
+    display: none;
+}
+
+.fact-card .top-pane {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fact-card .top-pane a {
+    color: rgb(197, 197, 201);
+    font-size: .8rem;
+}
+
+.fact-card .top-pane .upvote {
+    font-size: 1.5rem;
 }
 
 footer .container {
