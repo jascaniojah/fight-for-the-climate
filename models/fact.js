@@ -10,4 +10,4 @@ factSchema = mongoose.Schema({
     }
 });
 
-modules.exports = mongoose.model("Fact", factSchema);
+module.exports = mongoose.model("Fact", factSchema);

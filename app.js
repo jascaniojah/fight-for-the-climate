@@ -1,13 +1,17 @@
-const express     = require("express"),
-    mongoose    = require("mongoose");
-var app         = express();
+const   express     = require("express"),
+        mongoose    = require("mongoose");
+var app             = express();
+
+var seedDatabase    = require("./seed")
 
 app.set("view engine", "ejs");
 
-mongoose.connect('mongodb://127.0.0.1:27017', {
+mongoose.connect('mongodb+srv://augusthalverson:fight23@cluster0-2k2og.mongodb.net/test?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
+
+seedDatabase();
 
 app.get("/", function(req, res){
     res.render("home");
