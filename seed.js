@@ -58,8 +58,6 @@ var creators = [
     "Jeff Nelson"
 ]
 
-created = Date.now()
-
 function seedDatabase() {
     console.log("Seeding the database...");
     Fact.deleteMany({}, function(err){
@@ -70,8 +68,7 @@ function seedDatabase() {
                 var newFact = {
                     headline: headlines[i],
                     details: details[i],
-                    creator: creators[i],
-                    created: created
+                    creator: creators[i]
                 }
 
                 Fact.create(newFact, function(err, factCreated){

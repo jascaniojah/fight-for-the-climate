@@ -6,12 +6,14 @@ var seedDatabase    = require("./seed")
 
 app.set("view engine", "ejs");
 
+app.use(express.static(__dirname + "/public"));app.use(express.static(__dirname + "/public"));  // serve static files (images, css, js)
+
 mongoose.connect('mongodb+srv://augusthalverson:fight23@cluster0-2k2og.mongodb.net/test?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
 
-seedDatabase();
+// seedDatabase();
 
 app.get("/", function(req, res){
     res.render("home");
