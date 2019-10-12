@@ -1,6 +1,7 @@
 const   express     = require("express"),
         mongoose    = require("mongoose");
-var app             = express();
+var app             = express(),
+    Fact            = require("./models/fact");
 
 var seedDatabase    = require("./seed")
 
@@ -16,7 +17,14 @@ mongoose.connect('mongodb+srv://augusthalverson:fight23@cluster0-2k2og.mongodb.n
 // seedDatabase();
 
 app.get("/", function(req, res){
-    res.render("home");
+    Fact.find({}, function(err, foundFacts){
+        if (err) {
+            console.log("Problem retrieving entries from db")
+        } else {
+            res.render("home", {facts: foundFacts});
+        }
+    })
+    
 });
 
 app.listen(8080, function(){
