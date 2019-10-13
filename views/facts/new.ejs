@@ -1,0 +1,32 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div id="page-form">
+        <h3>Add new fact</h3>
+        <form action="/facts" method="POST">
+            <div class="form-field">
+                <label for="contributor">Source URL</label>
+                <input autofocus type="text" name="fact[source_url]" id="source_url" placeholder="Enter source URL...">
+            </div>
+            <div class="form-field">
+                <label for="contributor">Source Name</label>
+                <input autofocus type="text" name="fact[source_name]" id="source_name" placeholder="Enter source name...">
+            </div>
+            <div class="form-field">
+                <label for="headline">Headline</label>
+                <input type="text" name="fact[headline]" id="headline" placeholder="Enter Headline...">
+            </div>
+            <div class="form-field">
+                <label for="details">Details</label>
+                <textarea name="fact[details]" cols="30" rows="10" placeholder="Enter some details..."></textarea>
+            </div>
+            <div class="form-field">
+                <label for="contributor">Source</label>
+                <input type="text" name="fact[contributor]" id="headline" placeholder="Enter your name...">
+            </div>
+            <button>Submit new fact...</button>
+        </form>
+    </div>
+</div>
+
+<% include ../partials/footer %>

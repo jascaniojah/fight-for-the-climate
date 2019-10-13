@@ -1,3 +1,6 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
 #navbar {
     font-family: 'Courier New', Courier, monospace;
     font-size: 1rem;
@@ -69,6 +72,52 @@
 
 .fact-card .top-pane .upvote {
     font-size: 1.5rem;
+}
+
+#page-form {
+    width: 100%;
+    margin: 2rem 0;
+    padding: 3rem 5rem;
+    border-radius: 1rem;
+    background: rgb(2,0,36);
+    background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(49,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+#page-form h3 {
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#page-form label {
+    display: none;
+}
+
+#page-form input, textarea {
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    background: transparent;
+    resize: none;
+    caret-color: white;
+}
+
+#page-form input:focus, textarea:focus {
+    margin: 0;
+    background: rgba(0, 0, 0, 0.2);
+    outline: none;
+    border-left: 1px solid white;
+
+}
+
+#page-form ::placeholder {
+    color: white;
+}
+
+#page-form button {
+    width: 100%;
+    border-radius: .5rem;
+    padding: .5rem;
 }
 
 footer .container {
