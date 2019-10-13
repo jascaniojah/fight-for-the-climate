@@ -2,7 +2,12 @@ const   express     = require("express"),
         mongoose    = require("mongoose");
         bodyParser  = require("body-parser");
 var app             = express(),
-    Fact            = require("./models/fact");
+    Fact            = require("./models/fact"),
+    Source          = require("./models/source");
+
+var fact_routes     = require("./routes/fact_routes"),
+    source_routes   = require("./routes/source_routes"),
+    index_routes    = require("./routes/index_routes");
 
 var seedDatabase    = require("./seed")
 
@@ -17,54 +22,17 @@ mongoose.connect('mongodb+srv://augusthalverson:fight23@cluster0-2k2og.mongodb.n
 
 // seedDatabase();
 
-app.get("/", function(req, res){
-    res.redirect("/facts")
-});
 
-app.get("/facts", function(req, res){
-    Fact.find({}, function(err, foundFacts){
-        if (err) {
-            console.log("Problem retrieving entries from db")
-        } else {
-            res.render("home", {facts: foundFacts});
-        }
-    })
-    
-});
+// ROUTES
 
-app.get("/facts/new", function(req, res){
-    res.render("facts/new");
-});
 
-app.post("/facts", function(req, res){
-    factSubmission = req.body.fact;
+app.use("/sources", source_routes);
+app.use("/", index_routes);
+app.use("/facts", fact_routes);
 
-    var newFact = new Fact({
-        source_url: factSubmission.source_url,
-        source_name: factSubmission.source_name,
-        headline: factSubmission.headline,
-        details: factSubmission.details,
-        contributor: factSubmission.contributor});
 
-    Fact.create(newFact, function(err, factCreated){
-        if (err) {
-            console.log("A fatal error occurred while creating a new entry.")
-        } else {
-            res.redirect("/facts");
-        }
-    })
-});
 
-//show
-app.get("/facts/:id", function(req, res){
-    Fact.findById(req.params.id, function(err, foundFact){
-        if (err) {
-            req.flash("error", err.message);
-        } else {
-            res.render("facts/show", {fact: foundFact});
-        }
-    })
-})
+
 
 
 app.listen(8080, function(){
