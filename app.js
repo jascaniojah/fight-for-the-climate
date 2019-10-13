@@ -55,7 +55,19 @@ app.post("/facts", function(req, res){
     })
 });
 
+//show
+app.get("/facts/:id", function(req, res){
+    Fact.findById(req.params.id, function(err, foundFact){
+        if (err) {
+            req.flash("error", err.message);
+        } else {
+            res.render("facts/show", {fact: foundFact});
+        }
+    })
+})
+
 
 app.listen(8080, function(){
     console.log("fight-for-the-climate dev version live on 8080")
 });
+

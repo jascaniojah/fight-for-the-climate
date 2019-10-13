@@ -120,6 +120,34 @@ body {
     padding: .5rem;
 }
 
+#fact-show {
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#fact-show .flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+#fact-show h6{
+    color: gray;
+}
+
+#fact-show .top {
+    margin-bottom: 1rem;
+}
+
+#fact-show .dropdown-toggle, .dropdown-toggle:focus {
+    border: none;
+    color:gray;
+    outline: none;
+}
+
 footer .container {
     font-family: 'Poppins', sans-serif;
     color:grey;

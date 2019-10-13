@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+
+<div class="container my-5">
+    <div id="fact-show">
+        <div class="flex top">
+            <h6><em>Contributor: <%= fact.contributor %></em></h6>
+            <div class="dropdown">
+                <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="/facts/<%= fact._id %>/edit"><i class="fas fa-pencil-alt"></i>   Edit</a>
+                    <a class="dropdown-item" href="#"><i class="fas fa-trash-alt"></i>   Delete</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#"><i class="fas fa-globe"></i>   Source Info Page</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        <h3><%= fact.headline %></h3>
+        <h6>Source: <a href="<%= fact.source_link %>"><%= fact.source_name %></a></h6>
+        <hr>
+        <p><%= fact.details %></p>
+        <hr>
+        <p></p>
+        <div class="flex">
+            <span>Reputability score: A+  <i class="far fa-question-circle"></i></span>
+            <a href="https://www.nasa.gov/" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/1200px-NASA_logo.svg.png" alt="Nasa Logo" height="40"> </a>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+<% include ../partials/footer %>
