@@ -1,0 +1,32 @@
+<% include ../partials/header %>
+
+<div class="container mt-3">
+    <h1>Sources</h1>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">Reputability</th>
+                <th scope="col">Total Facts</th>
+                <th scope="col">Total Votes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (var i = 0; i < sources.length; i++) { %>
+                <tr>
+                    <td><%= sources[i].name_short %></td>
+                    <td><img src="<%= sources[i].logo %>" alt="<%= sources[i].name_long %> Logo" height="40px"></td>
+                    <td><a href="/sources/<%= sources[i]._id %>"><%= sources[i].name_long %></a></td>
+                    <td><%= sources[i].reputability %></td>
+                    <td><%= sources[i].number_of_facts %></td>
+                    <td><%= sources[i].total_votes %></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+    
+    <% include ../partials/footer %>
