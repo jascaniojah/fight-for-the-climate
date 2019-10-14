@@ -7,10 +7,14 @@ var express     = require("express"),
 // INDEX
 router.get("/", function(req, res){
     Fact.find({}, function(err, foundFacts){
+        foundFacts.sort(function(a, b) {
+            return a.votes - b.votes;
+        });
+        foundFacts = foundFacts.reverse();
         if (err) {
             console.log("Problem retrieving entries from db")
         } else {
-            res.render("home", {facts: foundFacts});
+            res.render("facts/index", {facts: foundFacts});
         }
     });
 });

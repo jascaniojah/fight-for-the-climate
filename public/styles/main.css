@@ -59,14 +59,14 @@ body {
     display: none;
 }
 
-.fact-card .top-pane {
-    text-align: right;
-}
-
-.fact-card .top-pane a {
+.fact-card .top-pane, .fact-card .top-pane a {
+    /* text-align: right; */
+    display: flex;
+    justify-content: space-between;
     color: rgb(197, 197, 201);
     font-size: .8rem;
 }
+
 
 .fact-card .top-pane .upvote {
     font-size: 1.5rem;

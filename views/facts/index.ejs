@@ -1,4 +1,4 @@
-<% include ./partials/header %>
+<% include ../partials/header %>
 
 <title>Home | Fight For The Climate</title>
 
@@ -15,6 +15,7 @@
                 <div class="fact-card">
                     <div class="fact-card-contents">
                         <div class="top-pane mb-2">
+                            <span>votes: <%= facts[i].votes %></span>
                             <a href="#"><em>@augusthalverson</em></a>
                         </div>
                         <h3><%= facts[i].headline %></h3>
@@ -29,5 +30,5 @@
             <% } %>
         </div>
     </div>
-    <% include ./partials/footer %>
+    <% include ../partials/footer %>
     
