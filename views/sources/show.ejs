@@ -11,7 +11,7 @@
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="/sources/<%= source._id %>/edit"><i class="fas fa-pencil-alt"></i>   Edit</a>
-                <a class="dropdown-item" href="#"><i class="fas fa-trash-alt"></i>   Delete</a>
+                <form method="POST" action="/sources/<%= source._id %>?_method=DELETE"><button class="dropdown-item"><i class="fas fa-trash-alt"></i>   Delete</button></form>
             </div>
         </div>
     </div>

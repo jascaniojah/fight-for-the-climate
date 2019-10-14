@@ -69,17 +69,35 @@ router.get("/:id", function(req, res){
 
 // EDIT
 router.get("/:id/edit", function(req, res){
-    res.render("sources/edit");
+    Source.findById(req.params.id, function(err, sourceFound){
+        if (err) {
+            console.log("A fatal error occured while trying to retrieve the source");
+        } else {
+            res.render("sources/edit", {source: sourceFound});
+        }
+    });
 });
 
 // UPDATE
-router.put("/:id", function(req, res){
-    // Implement
+router.post("/:id", function(req, res){
+    Source.findByIdAndUpdate(req.params.id, req.body.source, function(err, sourceUpdated){
+        if (err){
+            console.log("A fatal error occured while trying to update the source");
+        } else {
+            res.redirect("/sources/" + sourceUpdated._id);
+        }
+    })
 });
 
 // DESTROY
-router.delete("/", function(req, res){
-    // implement
+router.delete("/:id", function(req, res){
+    Source.findByIdAndRemove(req.params.id, function(err){
+        if (err) {
+            console.log("A fatal error occured while trying to delete the source");
+        } else {
+            res.redirect("/sources");
+        }
+    })
 });
 
 module.exports = router;
