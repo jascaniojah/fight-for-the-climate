@@ -4,29 +4,29 @@
 
 <div class="container">
     <div id="page-form">
-        <h3>Add new fact</h3>
-        <form action="/facts" method="POST">
+        <h3>Edit fact</h3>
+        <form action="/facts/<%= fact._id %>" method="POST">
             <div class="form-field">
-                <label for="contributor">Source URL</label>
-                <input autofocus type="text" name="fact[source_url]" id="source_url" placeholder="Enter source URL...">
+                <label for="source_link">Source URL</label>
+                <input autofocus type="text" name="fact[source_link]" id="source_link" placeholder="Enter source URL..." value="<%= fact.source_link %>">
             </div>
             <div class="form-field">
-                <label for="contributor">Source Name</label>
-                <input autofocus type="text" name="fact[source_name]" id="source_name" placeholder="Enter source name...">
+                <label for="source_name">Source Name</label>
+                <input autofocus type="text" name="fact[source_name]" id="source_name" placeholder="Enter source name..." value="<%= fact.source_name %>">
             </div>
             <div class="form-field">
                 <label for="headline">Headline</label>
-                <input type="text" name="fact[headline]" id="headline" placeholder="Enter Headline...">
+                <input type="text" name="fact[headline]" id="headline" placeholder="Enter Headline..." value="<%= fact.headline %>">
             </div>
             <div class="form-field">
                 <label for="details">Details</label>
-                <textarea name="fact[details]" cols="30" rows="10" placeholder="Enter some details..."></textarea>
+                <textarea name="fact[details]" cols="30" rows="10" placeholder="Enter some details..."><%= fact.details %></textarea>
             </div>
             <div class="form-field">
-                <label for="contributor">Source</label>
-                <input type="text" name="fact[contributor]" id="headline" placeholder="Enter your name...">
+                <label for="contributor">Contributor</label>
+                <input type="text" name="fact[contributor]" id="headline" placeholder="Enter your name..." value="<%= fact.contributor %>">
             </div>
-            <button>Submit new fact...</button>
+            <button id="submit">Submit new fact...</button>
         </form>
     </div>
 </div>

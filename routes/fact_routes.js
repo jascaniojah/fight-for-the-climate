@@ -3,8 +3,9 @@ var express     = require("express"),
     bodyParser  = require("body-parser"),
     Fact        = require("../models/fact");
 
+
+// INDEX
 router.get("/", function(req, res){
-    console.log("facts index route hit")
     Fact.find({}, function(err, foundFacts){
         if (err) {
             console.log("Problem retrieving entries from db")
@@ -14,15 +15,17 @@ router.get("/", function(req, res){
     });
 });
 
+// NEW
 router.get("/new", function(req, res){
     res.render("facts/new");
 });
 
+// CREATE
 router.post("/", function(req, res){
     factSubmission = req.body.fact;
 
     var newFact = new Fact({
-        source_url: factSubmission.source_url,
+        source_link: factSubmission.source_link,
         source_name: factSubmission.source_name,
         headline: factSubmission.headline,
         details: factSubmission.details,
@@ -37,15 +40,52 @@ router.post("/", function(req, res){
     })
 });
 
-//show
+//SHOW
 router.get("/:id", function(req, res){
     Fact.findById(req.params.id, function(err, foundFact){
         if (err) {
+            // TODO Implement Flash
             req.flash("error", err.message);
         } else {
             res.render("facts/show", {fact: foundFact});
         }
+    });
+});
+
+// EDIT
+router.get("/:id/edit", function(req,res) {
+    Fact.findById(req.params.id, function(err, foundFact){
+        if (err) {
+            // TODO Implement Flash
+            req.flash("error", err.message);
+        } else {
+            res.render("facts/edit", {fact: foundFact});
+        }
     })
 });
+
+// UPDATE
+router.post("/:id", function(req, res){
+    Fact.findByIdAndUpdate(req.params.id, req.body.fact, function(err, factUpdated){
+        if (err) {
+            console.log("A fatal error occured while trying to update the fact");
+        } else {
+            res.redirect("/facts/" + factUpdated._id);
+        }
+    });
+});
+
+// DESTROY
+router.delete("/:id", function(req, res){
+    Fact.findByIdAndRemove(req.params.id, function(err){
+        if (err) {
+            console.log("A fatal error occured while deleting the fact");
+        } else {
+            // req.flash()
+            res.redirect("/facts");
+        }
+    })
+
+})
 
 module.exports = router;

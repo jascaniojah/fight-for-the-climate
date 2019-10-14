@@ -15,11 +15,11 @@
                 <div class="fact-card">
                     <div class="fact-card-contents">
                         <div class="top-pane mb-2">
-                            <a href="#"><i class="fas fa-chevron-up upvote"></i><span class="button-purpose"> <em>upvote</em></span></a>
+                            <span><button class="vote-button" onclick=""><i class="fas fa-chevron-up upvote"></i></button><%= facts[i].votes %></span>
                             <a href="#"><em>augusthalverson</em></a>
                         </div>
                         <h3><%= facts[i].headline %></h3>
-                        <p><%= facts[i].details.substring(0,150) + "..." %> <a class="keep-reading" href="/facts/<%= facts[i]._id %>">keep reading</a></p>
+                        <p><%= facts[i].details.substring(0,150) + "..." %></p>
                         <div class="flex">
                             <a href="/facts/<%= facts[i]._id %>"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/1200px-NASA_logo.svg.png" alt="Nasa Logo" height="30"></a>
                             <a href="/facts/<%= facts[i]._id %>">more details  <i class="fa fa-long-arrow-alt-right"></i></a>

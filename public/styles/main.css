@@ -74,6 +74,10 @@ body {
     font-style: italic;
 }
 
+.vote-button {
+    border:none;
+}
+
 #page-form {
     margin: 2rem 0;
     padding: 3rem 5rem;

@@ -4,7 +4,7 @@ factSchema = mongoose.Schema({
     headline: String,
     details: String,
     contributor: String,
-    vote: {
+    votes: {
         type: Number,
         default: 0
     },

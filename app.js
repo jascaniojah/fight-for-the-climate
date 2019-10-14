@@ -1,19 +1,22 @@
-const   express     = require("express"),
-        mongoose    = require("mongoose");
-        bodyParser  = require("body-parser");
-var app             = express(),
-    Fact            = require("./models/fact"),
-    Source          = require("./models/source");
+const   express         = require("express"),
+        mongoose        = require("mongoose"),
+        bodyParser      = require("body-parser"),
+        methodOverride  = require("method-override");
+var app                 = express(),
+    Fact                = require("./models/fact"),
+    Source              = require("./models/source");
 
-var fact_routes     = require("./routes/fact_routes"),
-    source_routes   = require("./routes/source_routes"),
-    index_routes    = require("./routes/index_routes");
+var fact_routes         = require("./routes/fact_routes"),
+    source_routes       = require("./routes/source_routes"),
+    index_routes        = require("./routes/index_routes");
 
 var seedDatabase    = require("./seed")
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));app.use(express.static(__dirname + "/public"));  // serve static files (images, css, js)
+
+app.use(methodOverride('_method'))
 
 mongoose.connect('mongodb+srv://augusthalverson:fight23@cluster0-2k2og.mongodb.net/test?retryWrites=true&w=majority', {
   useNewUrlParser: true,

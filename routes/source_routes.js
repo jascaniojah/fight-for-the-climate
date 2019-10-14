@@ -28,31 +28,7 @@ router.get("/new", function(req, res){
 router.post("/", function(req, res){
     
     var sourceSubmission = req.body.source;
-
-    // var regPattern = new RegExp("wiki\/(.*)");
-    // var wiki_url_token = regPattern.exec(sourceSubmission.wikipedia_url)[1];
     
-    // var wiki_sum = "";
-
-    // const Http = new XMLHttpRequest();
-    // const wiki_url = "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=" + wiki_url_token;
-
-    // Http.open("GET", wiki_url);
-    // Http.send();
-
-    // Http.onreadystatechange = (e) => {
-    //     console.log(this.readyState);
-    //     console.log(this.status);
-    //     if (this.readyState == 4 && this.status == 200) {
-    //         var response = Http.responseText;
-    //         console.log("START");
-    //         console.log(response);
-    //         console.log("END");
-    //     } else {
-    //         res.send("Failed :(");
-    //     }
-    // };
-
     var newSource = new Source({
         name_long: sourceSubmission.name_long,
         name_short: sourceSubmission.name_short,
