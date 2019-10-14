@@ -4,9 +4,13 @@ body {
 #navbar {
     font-family: 'Courier New', Courier, monospace;
     font-size: 1rem;
-    font-weight: bold;
+    /* font-weight: bold; */
     background: rgb(36, 41, 46);
     color: white;
+}
+
+.navbar-brand {
+    font-weight: bold;
 }
 #navbar a {
     color:white
@@ -142,6 +146,10 @@ body {
 
 .right {
     text-align: right;
+}
+
+.center {
+    text-align: center;
 }
 
 #fact-show h6{
