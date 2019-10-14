@@ -60,8 +60,7 @@ body {
 }
 
 .fact-card .top-pane {
-    display: flex;
-    justify-content: space-between;
+    text-align: right;
 }
 
 .fact-card .top-pane a {
@@ -112,14 +111,21 @@ body {
     border-bottom: 1px solid black;
 }
 
-#page-form #submit {
+.submit {
     border: none;
     border-radius: 3px;
     padding: .5rem 1rem;
     color: #ffffff;
-    margin-top: 1rem;
     background: rgb(10,185,42);
     background: linear-gradient(223deg, rgba(10,185,42,1) 0%, rgba(7,117,70,1) 100%);
+}
+
+.secondary {
+    border: none;
+    border-radius: 3px;
+    padding: .5rem 1rem;
+    color: rgb(63, 63, 63);
+    background: lightgrey;
 }
 
 #page-form #clear {
@@ -130,13 +136,17 @@ body {
     margin-top: 1rem;
 }
 
+.show-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 #fact-show {
+    margin-top: 1rem;
     width: 100%;
     border: 1px solid lightgrey;
     border-radius: 1rem;
     padding: 2rem;
-    max-width: 600px;
-    margin: 0 auto;
 }
 
 .flex {
@@ -158,6 +168,13 @@ body {
 
 #fact-show .top {
     margin-bottom: 1rem;
+}
+
+.upvote-button {
+    border:none;
+    border: 1px solid grey;
+    color: grey;
+    border-radius: .5rem;
 }
 
 .dropdown-toggle, .dropdown-toggle:focus {

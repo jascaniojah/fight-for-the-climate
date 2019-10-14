@@ -86,6 +86,19 @@ router.delete("/:id", function(req, res){
         }
     })
 
-})
+});
+
+// Upvote 
+router.post("/:id/upvote", function(req, res){
+    Fact.findByIdAndUpdate(req.params.id, {$inc: { votes: 1 }}, function(err, foundFact) {
+        res.sendStatus(200);
+    });
+});
+// Upvote 
+router.post("/:id/downvote", function(req, res){
+    Fact.findByIdAndUpdate(req.params.id, {$inc: { votes: -1 }}, function(err, foundFact) {
+        res.sendStatus(200);
+    });
+});
 
 module.exports = router;
