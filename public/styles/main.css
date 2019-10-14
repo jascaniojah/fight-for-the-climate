@@ -166,8 +166,13 @@ body {
     outline: none;
 }
 
+#source-short-name {
+    font-size: 1.2rem;
+    color: grey;
+}
+
 #source-container .col-sm-4 img {
-    width: 100px;
+    width: 150px;
 }
 
 #source-container #edit-photo {
@@ -177,14 +182,6 @@ body {
     font-size: .7rem;
 }
 
-#source-container #source-info {
-    margin-top: 2rem;
-}
-
-#source-container #source-info h6 {
-    color: lightgray;
-    font-style: italic;
-}
 
 .prev-page {
     border: 1px solid lightgray;
