@@ -4,9 +4,13 @@ body {
 #navbar {
     font-family: 'Courier New', Courier, monospace;
     font-size: 1rem;
-    font-weight: bold;
+    /* font-weight: bold; */
     background: rgb(36, 41, 46);
     color: white;
+}
+
+.navbar-brand {
+    font-weight: bold;
 }
 #navbar a {
     color:white
@@ -24,7 +28,7 @@ body {
 #site-search i {
     color: grey;
 }
-#site-search input, input:focus {
+#site-search input, #site-search input:focus {
     background: rgb(63, 68, 72);
     border:none;
     caret-color: grey;
@@ -62,15 +66,14 @@ body {
     display: none;
 }
 
-.fact-card .top-pane {
+.fact-card .top-pane, .fact-card .top-pane a {
+    /* text-align: right; */
     display: flex;
     justify-content: space-between;
-}
-
-.fact-card .top-pane a {
     color: rgb(197, 197, 201);
     font-size: .8rem;
 }
+
 
 .fact-card .top-pane .upvote {
     font-size: 1.5rem;
@@ -81,64 +84,89 @@ body {
     font-style: italic;
 }
 
-#page-form {
-    width: 100%;
-    margin: 2rem 0;
-    padding: 3rem 5rem;
-    border-radius: 1rem;
-    background: rgb(2,0,36);
-    background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(49,9,121,1) 35%, rgba(0,212,255,1) 100%);
+.vote-button {
+    border:none;
 }
 
-#page-form h3 {
-    color: white;
-    text-align: center;
-    margin-bottom: 2rem;
+#page-form {
+    margin: 2rem 0;
+    padding: 3rem 5rem;
+}
+
+#page-form h4 {
+    margin-top: 1.5rem;
+}
+#page-form p {
+    color: gray;
 }
 
 #page-form label {
     display: none;
 }
 
-#page-form input, textarea {
-    width: 100%;
+#page-form input, #page-form textarea {
     border: none;
-    padding: 1rem;
-    background: transparent;
-    resize: none;
-    caret-color: white;
-}
-
-#page-form input:focus, textarea:focus {
-    margin: 0;
-    background: rgba(0, 0, 0, 0.2);
-    outline: none;
-    border-left: 1px solid white;
-
-}
-
-#page-form ::placeholder {
-    color: white;
-}
-
-#page-form button {
+    padding: .5rem .5rem;
+    border-bottom: 1px solid rgb(187, 189, 202);
     width: 100%;
-    border-radius: .5rem;
-    padding: .5rem;
+    margin-top: 1rem;
+    resize: none;
+}
+
+#page-form input:focus, #page-form textarea:focus {
+    outline: none;
+    border-bottom: 1px solid black;
+}
+
+.submit {
+    border: none;
+    border-radius: 3px;
+    padding: .5rem 1rem;
+    color: #ffffff;
+    background: rgb(10,185,42);
+    background: linear-gradient(223deg, rgba(10,185,42,1) 0%, rgba(7,117,70,1) 100%);
+}
+
+.secondary {
+    border: none;
+    border-radius: 3px;
+    padding: .5rem 1rem;
+    color: rgb(63, 63, 63);
+    background: lightgrey;
+}
+
+#page-form #clear {
+    border: 1px solid grey;
+    border-radius: 3px;
+    padding: .5rem 1rem;
+    color: grey;
+    margin-top: 1rem;
+}
+
+.show-container {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 #fact-show {
+    margin-top: 1rem;
     width: 100%;
     border: 1px solid lightgrey;
     border-radius: 1rem;
     padding: 2rem;
-    max-width: 600px;
-    margin: 0 auto;
 }
 
 .flex {
     display: flex;
     justify-content: space-between;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
 }
 
 #fact-show h6{
@@ -149,10 +177,51 @@ body {
     margin-bottom: 1rem;
 }
 
-#fact-show .dropdown-toggle, .dropdown-toggle:focus {
+.upvote-button {
+    border:none;
+    border: 1px solid grey;
+    color: grey;
+    border-radius: .5rem;
+}
+
+.dropdown-toggle, .dropdown-toggle:focus {
     border: none;
     color:gray;
     outline: none;
+}
+
+#source-short-name {
+    font-size: 1.2rem;
+    color: grey;
+}
+
+#source-container .col-sm-4 img {
+    width: 150px;
+}
+
+#source-container #edit-photo {
+    color: lightgray;
+    font-style: italic;
+    display: block;
+    font-size: .7rem;
+}
+
+
+.prev-page {
+    border: 1px solid lightgray;
+    padding: .4rem 1rem;
+    border-radius: .3rem;
+    color: lightgray;
+}
+
+.prev-page:hover {
+    color: rgb(187, 187, 187);
+    border-color: rgb(187, 187, 187);
+    text-decoration: none;
+}
+
+.centered {
+    text-align: center;
 }
 
 footer .container {

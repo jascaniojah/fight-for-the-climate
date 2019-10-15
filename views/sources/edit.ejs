@@ -1,0 +1,55 @@
+<% include ../partials/header %>
+
+<title>Edit Source | Fight For The Climate</title>
+
+<div class="container">
+    <div id="page-form">
+        <h3>Edit source</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas autem in neque incidunt aut tempora saepe consequatur? Commodi earum impedit architecto quod, exercitationem iste quia totam corrupti quidem doloribus ratione?</p>
+        <hr>
+        <form action="/sources/<%= source._id %>" method="POST">
+            <h4>Name</h4>
+            <div class="form-field">
+                <label for="name_long">Long name</label>
+                <input autofocus type="text" name="source[name_long]" id="name_long" placeholder="Enter long name..." value="<%= source.name_long %>">
+            </div>
+            <div class="form-field">
+                <label for="name_short">Short name</label>
+                <input type="text" name="source[short_name]" id="short_name" placeholder="Enter short name..." value="<%= source.name_short %>">
+            </div>
+            <div class="form-field">
+                <label for="url">Source URL</label>
+                <input type="text" name="source[url]" id="url" placeholder="Enter source URL..." value="<%= source.url %>">
+            </div>
+            <h4>Logo</h4>
+            <hr>
+            <div class="form-field">
+                <label for="logo_url">Logo URL</label>
+                <input type="text" name="source[logo]" id="logo_url" placeholder="Enter logo URL..." value="<%= source.logo %>">
+            </div>
+            <h4>Reputability</h4>
+            <hr>
+            <div class="form-field">
+                <label for="reputability">Reputability</label>
+                <input type="text" name="source[reputability]" id="reputability" placeholder="Enter reputability grade..." value="<%= source.reputability %>">
+            </div>
+            <h4>Wikipedia</h4>
+            <hr>
+            <div class="form-field">
+                <label for="wiki_url">Wikipedia URL</label>
+                <input type="text" name="source[wikipedia_url]" id="wiki_url" placeholder="Enter source wikipedia URL..." value="<%= source.wikipedia_url %>">
+            </div>
+            <div class="form-field">
+                <label for="wiki_url">Wikipedia URL</label>
+                <textarea name="wikipedia_summary" id="wikipedia_summary" placeholder="Paste Wikipedia Summary Here"><%= source.wikipedia_summary %></textarea>
+            </div>
+            <div class="right">
+                <button id="clear">Clear</button>
+                <button id="submit">Submit new fact...</button>
+            </div>
+            
+        </form>
+    </div>
+</div>
+
+<% include ../partials/footer %>
