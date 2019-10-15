@@ -32,6 +32,13 @@ body {
     margin-left: .8rem;
 }
 
+.align-search {
+    margin: .5rem 1rem;
+}
+
+.active {
+    color : green !important;
+}
 
 .fact-card {
     border: 1px solid rgb(216, 216, 216);
